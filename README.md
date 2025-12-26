@@ -29,7 +29,7 @@ Usa una variable de entorno para almacenar la información de configuración del
 
 **2. HTML**
 
-Crea un Webresource de tipo HTML que pinte un iframe, e inicializa el atributo src del iframe con la información pasada como parametro en la propiedad data de la URL.
+Crea un Webresource de tipo HTML que pinte un iframe, e inicialice el atributo src del iframe con la información pasada como parametro en la propiedad data de la URL.
 
 ```
 <html style="height: 97%;">
@@ -59,7 +59,7 @@ Crea un Webresource de tipo HTML que pinte un iframe, e inicializa el atributo s
 
 **3. JavaScript**
 
-Crea un webresource de tipo javaScript que lea la variable de entorno definida y genere tantos paneles como JSON encuentre. Pasando en la navegación del panel la confuguración:
+Crea un webresource de tipo javaScript que lea la variable de entorno definida y genere tantos paneles como JSON encuentre. Pasando en la navegación del panel la configuración:
 
 - ***pageType: "webresource"***
 - ***webresourceName: xxxxxxxx*** (nombre del HTML creado en el paso anterior)
@@ -68,7 +68,7 @@ Crea un webresource de tipo javaScript que lea la variable de entorno definida y
 <pre>
 async function showGlobalMessage()
 {
-    var urls = await getEnvironmentVariableValue("xxxxxxxxxx"); //sustituir xxxxxxx por el nombre interno de la variable de entorno
+    var urls = await getEnvironmentVariableValue("xxxxxxxxxx"); //sustituir xxxxxxx por el nombre interno de la variable de entorno creada en el paso 1
     var cont = 0;
     urls.forEach(element => {
         var Pane = Xrm.App.sidePanes.getPane("Pane"+cont);
@@ -85,7 +85,7 @@ async function showGlobalMessage()
             .then((pane) => {
                 pane.navigate({
                     pageType: "webresource",
-                    webresourceName: "ero_agent.html",
+                    webresourceName: "xxxxxxxxx.html", //sustituir xxxxxxx por el nombre del HTML creado en el paso 2
                     data: element.url
                 });
             });
@@ -117,8 +117,8 @@ Para que todo esto funcione necesitamos un trigger que llame a nuestra función 
 
 1. Crearemos una solución que incluya el componente "Cintas de opciones de la aplicación" y lo abriremos con el plugin RibbonWorkbench del XRMToolbox.
 2. Desde RibbonWorkbench:
-   - Crearemos un botón, en el área Home buscaremos la sección ***Mscrm.GlobalTab***.
-   - Crearemos una Enable Rule de tipo CustomRule donde llamaremos a nuestra funcion js definida en el paso 3. IMportante dejar el Default a False para que el botón este oculto.
+   - Crearemos un botón, en el área Home buscaremos la sección ***Mscrm.GlobalTab*** y lo insertaremos.
+   - Crearemos una Enable Rule de tipo CustomRule donde llamaremos a nuestra funcion js definida en el paso 3. Importante dejar el Default a False para que el botón este oculto.
      <img width="1072" height="176" alt="image" src="https://github.com/user-attachments/assets/279bdd1a-cb29-4423-b241-959247b7fbcf" />
    - Crear Command para enlazarlo al botón.
      <img width="1791" height="431" alt="image" src="https://github.com/user-attachments/assets/e4e9af93-7a05-4fe8-be9a-16288035c221" />
