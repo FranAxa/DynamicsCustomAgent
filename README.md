@@ -1,5 +1,5 @@
 # DynamicsCustomAgent
-Una forma interesante de sacarle partido al SidePane de Dynamics, incrustando un agente custom creado con Copilot Studio en Dynamics 365. Pasos para conseguirlo:
+Una forma de sacarle partido al SidePane de Dynamics, incrustando un agente custom creado con Copilot Studio en Dynamics 365. Pasos para conseguirlo:
 
 **1. Variable de entorno.**
 
@@ -123,4 +123,4 @@ Para que todo esto funcione necesitamos un trigger que llame a nuestra función 
    - Crear Command para enlazarlo al botón.
      <img width="1791" height="431" alt="image" src="https://github.com/user-attachments/assets/e4e9af93-7a05-4fe8-be9a-16288035c221" />
   
-Con esto tras publicar todo en Dynamics y recargar tendremos los agentes que definidos en el panel lateral o side panel y podremos hacer uso de ellos.
+Con esto tras publicar todo en Dynamics y recargar tendremos los agentes configurados en el panel lateral o side panel y podremos hacer uso de ellos.
